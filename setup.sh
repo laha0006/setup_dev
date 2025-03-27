@@ -15,7 +15,7 @@ install_zsh() {
 	sudo apt install zsh -y
 	chsh -s $(which zsh)
 	exec zsh -f
-	curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+	sudo curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 }
 
 build_neovim_source() {
