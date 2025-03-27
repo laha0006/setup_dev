@@ -13,8 +13,8 @@ apt_update_install() {
 
 install_zsh() {
 	sudo apt install zsh -y
-	chsh -s $(which zsh)
-	exec zsh
+	sudo chsh -s $(which zsh)
+	sudo exec zsh
 }
 
 build_neovim_source() {
