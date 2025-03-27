@@ -14,7 +14,6 @@ apt_update_install() {
 install_zsh() {
 	sudo apt install zsh -y
 	chsh -s $(which zsh)
-	exec zsh
 }
 
 build_neovim_source() {
@@ -30,8 +29,7 @@ build_neovim_source() {
 install_fnm_node_lts() {
 	echo "installing fnm, and node 22"
 	cd ~
-	curl -o- https://fnm.vercel.app/install | bash
-	source ~/.bashrc
+	curl -o- https://fnm.vercel.app/install | bash -s --skip-shell
 	fnm install --lts
 }
 
