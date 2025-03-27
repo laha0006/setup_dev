@@ -45,8 +45,8 @@ setup_config() {
 
 
 apt_update_install
+setup_config
 install_zsh
 build_neovim_source
 install_fnm_node_lts
-setup_config
 echo "Complete!"
