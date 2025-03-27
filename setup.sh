@@ -11,6 +11,13 @@ apt_update_install() {
 	sudo apt install ninja-build gettext cmake curl build-essential -y
 }
 
+install_zsh() {
+	sudo apt install zsh -y
+	chsh -s $(which zsh)
+	exec zsh -f
+	curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
+}
+
 build_neovim_source() {
 	echo "building neovim from source..."
 	git clone https://github.com/neovim/neovim
