@@ -14,7 +14,6 @@ apt_update_install() {
 install_zsh() {
 	sudo apt install zsh -y
 	chsh -s $(which zsh)
-	sudo curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 	exec zsh
 }
 
