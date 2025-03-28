@@ -9,9 +9,8 @@ apt_update_install() {
 
 	echo "installing ninja-build gettext cmake curl build-esentail"
 	sudo apt install ninja-build gettext cmake curl build-essential -y
-}
 
-install_zsh() {
+	echo "Installing zsh"
 	sudo apt install zsh -y
 }
 
@@ -29,6 +28,7 @@ install_fnm_node_lts() {
 	echo "installing fnm, and node 22"
 	cd ~
 	curl -o- https://fnm.vercel.app/install | bash
+	sourc ~/.bashrc
 	fnm install --lts
 }
 
@@ -42,9 +42,9 @@ setup_config() {
 
 apt_update_install
 setup_config
-install_zsh
 build_neovim_source
 install_fnm_node_lts
 echo "Complete!"
 echo "Change to zsh!"
 chsh -s $(which zsh)
+exec zsh
