@@ -28,7 +28,7 @@ install_fnm_node_lts() {
 	echo "installing fnm, and node 22"
 	cd ~
 	curl -o- https://fnm.vercel.app/install | bash
-	sourc ~/.bashrc
+	source ~/.bashrc
 	fnm install --lts
 }
 
