@@ -23,6 +23,10 @@ build_neovim_source() {
 	sudo make install
 }
 
+setup_tmux_package_manager() {
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 
 install_fnm_node_lts() {
 	echo "installing fnm, and node 22"
@@ -44,6 +48,7 @@ apt_update_install
 setup_config
 build_neovim_source
 install_fnm_node_lts
+setup_tmux_package_manager
 echo "Complete!"
 echo "Change to zsh!"
 chsh -s $(which zsh)
