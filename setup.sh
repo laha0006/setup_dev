@@ -39,6 +39,11 @@ install_fnm_node_lts() {
 	fnm install --lts
 }
 
+install_global_npm() {
+	npm install -g prettier
+	npm install -g @fsouza/prettierd	
+} 
+
 setup_config() {
 	cd ~
 	git clone https://github.com/laha0006/.dotfiles.git
@@ -56,6 +61,7 @@ apt_update_install
 setup_config
 build_neovim_source
 install_fnm_node_lts
+install_global_npm
 setup_tmux_package_manager
 rustup
 echo "Complete!"
