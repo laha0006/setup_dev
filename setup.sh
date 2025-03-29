@@ -50,6 +50,5 @@ build_neovim_source
 install_fnm_node_lts
 setup_tmux_package_manager
 echo "Complete!"
-echo "Change to zsh!"
+echo "Change to zsh! RESTART TERMINAL"
 chsh -s $(which zsh)
-exec zsh
