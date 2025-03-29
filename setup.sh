@@ -12,6 +12,9 @@ apt_update_install() {
 
 	echo "Installing zsh"
 	sudo apt install zsh -y
+
+	echo "Installing libssl-dev, and pkg-config"
+	sudo apt install libssl-dev pkg-config -y
 }
 
 build_neovim_source() {
