@@ -41,6 +41,7 @@ setup_config() {
 	git clone https://github.com/laha0006/.dotfiles.git
 	cd .dotfiles
 	stow .
+	cd ~
 }
 
 
