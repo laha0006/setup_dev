@@ -47,12 +47,17 @@ setup_config() {
 	cd ~
 }
 
+rustup() {
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
 
 apt_update_install
 setup_config
 build_neovim_source
 install_fnm_node_lts
 setup_tmux_package_manager
+rustup
 echo "Complete!"
 echo "Change to zsh! RESTART TERMINAL"
 chsh -s $(which zsh)
