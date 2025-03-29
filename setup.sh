@@ -25,6 +25,8 @@ build_neovim_source() {
 
 setup_tmux_package_manager() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	tmux source ~/.tmux.conf
+	"$TPM_DIR/bin/install_plugins"
 }
 
 
