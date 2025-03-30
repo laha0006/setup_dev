@@ -21,7 +21,7 @@ build_neovim_source() {
 	echo "building neovim from source..."
 	git clone https://github.com/neovim/neovim
 	cd neovim
-	git checkout stable
+	git checkout v0.10.4
 	make CMAKE_BUILD_TYPE=RelWithDebInfo
 	sudo make install
 }
