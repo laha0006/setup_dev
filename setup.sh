@@ -30,6 +30,26 @@ setup_tmux_package_manager() {
 	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
+install_fnm_node_lts_new() {
+  echo "installing fnm and Node LTS..."
+  cd ~
+  curl -fsSL https://fnm.vercel.app/install | bash
+
+  # Ensure Zsh initializes fnm (since you switch shell later in setup.sh)
+  if ! grep -q 'eval "$(fnm env)"' ~/.zshrc; then
+    echo 'eval "$(fnm env)"' >> ~/.zshrc
+  fi
+
+  # Initialize fnm right away for the current script run
+  export PATH="$HOME/.fnm:$PATH"
+  eval "$(fnm env)"
+
+  # Install latest LTS node and set as default
+  fnm install --lts
+  LTS_VERSION=$(fnm list | grep 'LTS' | awk '{print $2}' | head -n1)
+  echo "Detected LTS version: $LTS_VERSION"
+  fnm default "$LTS_VERSION"
+}
 
 install_fnm_node_lts() {
 	echo "installing fnm, and node 22"
@@ -63,7 +83,6 @@ build_neovim_source
 install_fnm_node_lts
 install_global_npm
 setup_tmux_package_manager
-rustup
-echo "Complete!"
+# rustup
 echo "Change to zsh! RESTART TERMINAL"
 chsh -s $(which zsh)
