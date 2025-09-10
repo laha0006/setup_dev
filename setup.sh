@@ -73,6 +73,6 @@ build_neovim_source
 #install_fnm_node_lts
 install_global_npm
 setup_tmux_package_manager
-# rustup
+rustup
 chsh -s $(which zsh)
 exec zsh
