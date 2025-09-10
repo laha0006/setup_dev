@@ -35,11 +35,6 @@ install_fnm_node_lts_new() {
   cd ~
   curl -fsSL https://fnm.vercel.app/install | bash
 
-  # Ensure Zsh initializes fnm (since you switch shell later in setup.sh)
-  if ! grep -q 'eval "$(fnm env)"' ~/.zshrc; then
-    echo 'eval "$(fnm env)"' >> ~/.zshrc
-  fi
-
   # Initialize fnm right away for the current script run
   export PATH="$HOME/.fnm:$PATH"
   eval "$(fnm env)"
@@ -79,11 +74,10 @@ rustup() {
 
 apt_update_install
 setup_config
+chsh -s $(which zsh)
+exec zsh
 build_neovim_source
 install_fnm_node_lts
 install_global_npm
 setup_tmux_package_manager
 # rustup
-chsh -s $(which zsh)
-echo "Setup complete! Reloading into zsh now..."
-exec zsh
