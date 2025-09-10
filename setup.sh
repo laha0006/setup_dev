@@ -24,6 +24,7 @@ build_neovim_source() {
 	git checkout stable
 	make CMAKE_BUILD_TYPE=RelWithDebInfo
 	sudo make install
+	cd ~
 }
 
 setup_tmux_package_manager() {
