@@ -34,16 +34,9 @@ install_fnm_node_lts_new() {
   echo "installing fnm and Node LTS..."
   cd ~
   curl -fsSL https://fnm.vercel.app/install | bash
-
-  # Initialize fnm right away for the current script run
-  export PATH="$HOME/.fnm:$PATH"
-  eval "$(fnm env)"
-
+  source ~/.bashrc
   # Install latest LTS node and set as default
   fnm install --lts
-  LTS_VERSION=$(fnm list | grep 'LTS' | awk '{print $2}' | head -n1)
-  echo "Detected LTS version: $LTS_VERSION"
-  fnm default "$LTS_VERSION"
 }
 
 install_fnm_node_lts() {
