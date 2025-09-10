@@ -84,5 +84,6 @@ install_fnm_node_lts
 install_global_npm
 setup_tmux_package_manager
 # rustup
-echo "Change to zsh! RESTART TERMINAL"
 chsh -s $(which zsh)
+echo "Setup complete! Reloading into zsh now..."
+exec zsh
