@@ -76,8 +76,9 @@ apt_update_install
 setup_config
 chsh -s $(which zsh)
 exec zsh
+install_fnm_node_lts_new 
 build_neovim_source
-install_fnm_node_lts
+#install_fnm_node_lts
 install_global_npm
 setup_tmux_package_manager
 # rustup
